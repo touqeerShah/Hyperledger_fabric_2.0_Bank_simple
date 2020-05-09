@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="login_page">
+  <div class="container">
+    <hr>
+
+    <h4 class="login100-form-title">
+      User Creation Form
+    </h4>
+    <hr>
+    <form method="post" action="/create">
+
+      <div class="form-group  " data-validate="Please enter username">
+          <input class="form-group" type="text" name="Name" id="Name" placeholder="Name" required>
+        <span class="focus-input100"></span>
+      </div>
+      <div class="form-group  " data-validate="Please enter username">
+        <input class="form-group" type="text" name="userid" id="userId" placeholder="Username" required>
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="form-group " data-validate="Please enter password">
+        <input class="form-group" type="password" id="password" name="password" placeholder="Password"required>
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="form-group " data-validate="Please enter Role">
+        <span class="focus-input100">Role</span>
+
+        <select name="role" placeholder="Designation" class="form-group">
+          <option value="Boss" ;>Boss
+          </option>
+          <option value="Employe" ;>Employe
+          </option>
+        </select>
+
+      </div>
+      <h5 class="">Who is Your Boss</h5>
+
+      <div class="form-group " data-validate="Please enter Boss">
+
+        <select name="boss" placeholder="Designation" class="form-group">
+          <option value="none" ;>none
+          </option>
+          <% for(var i=0;i<=data.bossList.length;i++){%>
+          <option value="<%=data.bossList[i]%>" ;>
+            <%=data.bossList[i]%>
+          </option>
+          <%
+              }%>
+        </select>
+      </div>
+      <hr>
+
+      <div class="form-group ">
+        <span style="color :black;" class="txt1">
+          <%=data.message%>
+          <!--  <span id="delay"></span>
+                  <input type="hidden" id="test" value="<%=data.message%>"/>-->
+        </span>
+      </div>
+      <hr>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-1">
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary" value="Sign In" onclick="myFunction()"> Create User </button>
+            </p>
+          </div>
+
+
+    </form>
+    <div class="col-md-1">
+      <form class="" method="get" action="/login">
+        <div class="">
+          <p class="">
+            <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary">Login</button>
+          </p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  </div>
+  </div> <!-- container -->
+
+  <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+
+</body>
+
+
+</html>

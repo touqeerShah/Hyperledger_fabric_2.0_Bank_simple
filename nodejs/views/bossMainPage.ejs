@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="login_page">
+
+  <div class="container">
+    <div class="row">
+
+      <hr>
+
+      <div class="col-md-12">
+        <h4 class="login100-form-title">
+          Boss Page
+        </h4>
+      </div>
+      <hr>
+      <div class="col-md-2">
+        <form method="post" action="/queryAllUnvalidatedTransationId">
+          <div>
+            <input name="obj" id="obj" value="<%=data.obj%>" type="hidden" />
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary">View All New Transaction </button>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-3">
+        <form method="post" action="/queryAllValidatedTransationIdByMe">
+          <input name="obj" id="obj" value="<%=data.obj%>" type="hidden" />
+
+          <div>
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary"> View All Transaction Validated By Me </button>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-3">
+
+        <form method="post" action="/queryAllRequestToViewTransion">
+          <input name="obj" id="obj" value="<%=data.obj%>" type="hidden" />
+          <div>
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary"> View All Request for View Details </button>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-1">
+
+        <form method="get" action="/logout">
+          <div>
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary">Log Out </button>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12">
+        <hr>
+
+        <h4 class="login100-form-title">
+          <%=data.message%>
+        </h4>
+        <hr>
+      </div>
+
+    </div>
+  </div>
+  <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="login_page">
+
+  <div class="container">
+    <div class="row">
+
+      <hr>
+
+      <div class="col-md-12">
+        <h4 class="login100-form-title">
+          Employee Page
+        </h4>
+      </div>
+      <hr>
+      <div class="col-md-2">
+        <form method="post" action="/createTransaction">
+          <div>
+            <input name="obj" id="obj" value="<%=data.obj%>" type="hidden" />
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary"> Create Transaction </button>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-3">
+        <form method="post" action="/ViewAllTransactonCreatedByMe">
+          <input name="obj" id="obj" value="<%=data.obj%>" type="hidden" />
+
+          <div>
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary"> View All Transaction Created By Me </button>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-2">
+
+        <form method="post" action="/ViewAllTransaction">
+          <input name="obj" id="obj" value="<%=data.obj%>" type="hidden" />
+          <div>
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary"> View All Transaction </button>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-2">
+
+        <form method="get" action="/logout">
+          <div>
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary">Log Out </button>
+            </p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="login100-form-title">
+          All Transaction </h4>
+
+      </div>
+
+      <table>
+        <tr>
+          <th>Transaction Id</th>
+          <th>View Permission</th>
+        </tr>
+
+        <% for(var i=0;i<data.transactionid.length;i++){%>
+        <tr>
+          <td><%=data.transactionid[i]%></td>
+          <%if (data.permission[i]=="Yes"){%>
+          <td>
+            <form class="" method="post" action="/viewTransationDetailsAfterRequest">
+              <input name="data" id="data" value="<%=data.obj+'~'+data.transactionid[i]%>" type="hidden" />
+              <div class="">
+                <p class="">
+                  <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary">View Details</button>
+                </p>
+              </div>
+            </form>
+          </td>
+          <%}else{%>
+          <td>
+            <form class="" method="post" action="/requestForViewDetails">
+              <input name="data" id="data" value="<%=data.obj+'~'+data.transactionid[i]%>" type="hidden" />
+              <div class="">
+                <p class="">
+                  <button type="submit" class="btn btn-primary">Request For Details</button>
+                </p>
+              </div>
+            </form>
+          </td>
+          <%}%>
+        </tr>
+        <%}%>
+
+      </table>
+
+    </div>
+  </div>
+
+</body>
+
+
+</html>

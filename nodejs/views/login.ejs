@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="login_page">
+  <div class="container">
+    <hr>
+
+    <h4 class="login100-form-title">
+      Login Page
+    </h4>
+    <hr>
+
+    <form class="" method="post" action="/login">
+
+      <div class="" data-validate="Please enter username">
+        <input class="form-group" type="text" name="userid" id="userid" placeholder="user id">
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="form-group" data-validate="Please enter password">
+        <input class="form-group" type="password" id="password" name="password" placeholder="Password">
+        <span class="focus-input100"></span>
+      </div>
+      <hr>
+
+
+      <div>
+        <span style="color :black;" class="txt1">
+          <%=data.message%>
+          <!--  <span id="delay"></span>
+                  <input type="hidden" id="test" value="<%=data.message%>"/>-->
+        </span>
+      </div>
+      <hr>
+
+
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-1">
+            <p>
+              <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary" value="Sign In" onclick="myFunction()"> login </button>
+            </p>
+          </div>
+
+
+    </form>
+    <div class="col-md-1">
+      <form class="" method="get" action="/createuser">
+        <div class="">
+          <p class="">
+            <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-primary">Create User</button>
+          </p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  </div>
+
+  </div> <!-- container -->
+
+  <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+
+
+</body>
+
+
+</html>
