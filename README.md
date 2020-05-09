@@ -63,8 +63,5 @@ This system have tow type of user
   * View all transaction Validated by him/her
   * View Request for View Transaction Details
 
-
-
-
-
+when we create Boss the role will be boss and who is boss will none in case of epmployee we have to tell who is the boss
 
