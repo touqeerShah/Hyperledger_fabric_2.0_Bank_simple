@@ -13,7 +13,7 @@
         "fabric-ca-client": "~1.4.0",
         "fabric-client": "^1.4.8",
         "fabric-network": "^1.4.8",
-        "grpc": "^1.24.2"
+        "grpc": "^1.24.9"
     },
     "author": "Anthony O'Dowd",
     "license": "Apache-2.0",
